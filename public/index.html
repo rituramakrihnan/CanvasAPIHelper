@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Assignment Submitter</title>
+   <!-- <link rel="stylesheet" href="css/CanvasSubmissionForm.css">-->
+</head>
+<body>
+<link rel="stylesheet" href="style.css">
+<h1>Canvas Assignment Submitter</h1>
+<form id="assignmentForm" action="/submit" method="POST" enctype="multipart/form-data">
+<label for="login">Login ID:</label>
+<input type="text" id="login" name="login">
+<label for="password">Password:</label>
+<input type="password" id="password" name="password"><br><br>
+<label for="CourseNo">Course Number:</label>
+<input type="text" id="CourseNo" name="CourseNo"><br><br>
+<label for="CourseName">Course Name: </label>
+<input type="text" id="CourseName" name="CourseName"><br><br>
+<label for="AssignmentID">Assignment ID: </label>
+<input type="text" id="AssignmentID" name="AssignmentID"><br><br>
+<label for="AssignmentFile">Assignment File: </label>
+<input type="file" id="AssignmentFile" name="AssignmentFile"><br><br>
+ <button type="submit">Submit Assignment</button>
+   </form>
+<script>
+    document.getElementById("assignmentForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Get form data
+        const login = document.getElementById("login").value;
+        const password = document.getElementById("password").value;
+        const CourseNo = document.getElementById("CourseNo").value;
+        const CourseName = document.getElementById("CourseName").value;
+        const AssignmentID = document.getElementById("AssignmentID").value;
+        const AssignmentFile = document.getElementById("AssignmentFile").files[0];
+
+        // Perform form validation
+        if (!login || !password || !CourseNo || !CourseName || !AssignmentID || !AssignmentFile) {
+            alert("All fields are required.");
+            return; // Stop further processing if validation fails
+        }
+
+        // Create an XMLHttpRequest to send the form data
+        const formData = new FormData();
+        formData.append('login', login);
+        formData.append('password', password);
+        formData.append('CourseNo', CourseNo);
+        formData.append('CourseName', CourseName);
+        formData.append('AssignmentID', AssignmentID);
+        formData.append('AssignmentFile', AssignmentFile);
+
+        //send form data to backend
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "/submit", true);
+        xhr.send(formData);
+        // Handle the response to show whether the submission was successful
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                alert('Submission successful!');
+            } else {
+                alert('Submission Failed!');
+            }
+        };
+        // Clear the form
+        document.getElementById("assignmentForm").reset();
+    });
+</script>
+</body>
+</html>
