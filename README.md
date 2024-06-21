@@ -24,4 +24,4 @@ Canvas is a web-based learning management system (LMS) used by educational insti
 - **Grades:** Students can view their grades and feedback on assignments and tests.
 - **Communication:** Instructors and students can communicate via messages, announcements, and discussion boards.
 
-![Canvas Student](../CanvasAPISubmitter/public/Canvas.png)
+![Canvas Student](public/Canvas.png)
