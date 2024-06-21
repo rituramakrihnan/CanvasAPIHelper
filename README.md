@@ -13,3 +13,15 @@ Students often face issues while accessing Canvas and submitting assignments, pa
 
 - **Front End:** JavaScript, HTML, and CSS
 - **Back End:** Node.js
+
+## What is Canvas?
+Canvas is a web-based learning management system (LMS) used by educational institutions to facilitate online learning and teaching. It provides a platform for instructors to share course materials, assign and grade homework, manage student submissions, and communicate with students. Students use Canvas to access course content, submit assignments, take quizzes, and interact with their peers and instructors.
+
+## How Canvas is Used
+- **Course Content:** Instructors upload lecture notes, readings, videos, and other resources for students to access.
+- **Assignments:** Students submit their homework, essays, projects, and other assignments through Canvas.
+- **Quizzes and Exams:** Online quizzes and exams can be administered through Canvas.
+- **Grades:** Students can view their grades and feedback on assignments and tests.
+- **Communication:** Instructors and students can communicate via messages, announcements, and discussion boards.
+
+![Canvas Student](../CanvasAPISubmitter/public/Canvas.png)
